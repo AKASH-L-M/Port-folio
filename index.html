@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sujanth</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">     
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <style>
+
+            body{
+                background-color: black;
+                color:rgb(88, 214, 88);
+            }
+
+            html {
+                scroll-behavior: smooth;
+            } 
+            .hidden {
+            display: none;
+            }
+            a:focus{
+                color:red;
+            } 
+            a:hover{
+                color:blue;
+            } 
+            a:link{
+                color:green;
+            }
+            a{
+                color:white;
+            }
+
+            .grid-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 20px;
+            }
+
+            table, th, td {
+            border: 1px solid black;
+            
+            }
+            th, td {
+            padding: 15px;
+            }
+
+            /* 3D Slideshow */ 
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            html, body {
+                max-width: 100%;
+                overflow-x: hidden;
+                overflow-y: hidden;
+            }
+
+            #slideshow {
+                margin: 0 auto;
+                padding-top: 10px;
+                height: 340px;
+                width: 100%;
+                background-color: #6adecd;
+                box-sizing: border-box;
+            }
+
+            .slideshow-title {
+                font-family: 'Allerta Stencil';
+                font-size: 62px;
+                color: #fff;
+                margin: 0 auto;
+                text-align: center;
+                margin-top: 50%;
+                letter-spacing: 3px;
+                font-weight: 300;
+            }
+
+            .sub-heading {
+                padding-top: 50px;
+                font-size: 18px;
+            } .sub-heading-two {
+                font-size: 15px;
+            } .sub-heading-three {
+                font-size: 13px;
+            } .sub-heading-four {
+                font-size: 11px;
+            } .sub-heading-five {
+                font-size: 9px;
+            } .sub-heading-six {
+                font-size: 7px;
+            } .sub-heading-seven {
+                font-size: 5px;
+            } .sub-heading-eight {
+                font-size: 3px;
+            } .sub-heading-nine {
+                font-size: 1px;
+            }
+
+            .entire-content {
+                margin: auto;
+                width: 190px;
+                perspective: 1000px;
+                position: relative;
+                padding-top: 80px;
+            }
+            .entire-content-edu {
+                margin:auto ;
+                width: 190px;
+                perspective: 1100px;
+                position: relative;
+                padding-top: 80px;
+            }
+
+            .content-carrousel {
+                width: 100%;
+                position: absolute;
+                float: right;
+                animation: rotar 25s infinite linear;
+                transform-style: preserve-3d;
+            }
+
+            .content-carrousel:hover {
+                animation-play-state: paused;
+                cursor: pointer;
+            }
+
+            .content-carrousel figure {
+                width: 100%;
+                height: 120px;
+                border: 1px solid #3b444b;
+                overflow: hidden;
+                position: absolute;
+            }
+
+            .content-carrousel figure:nth-child(1) {
+                transform: rotateY(0deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(2) {
+                transform: rotateY(40deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(3) {
+                transform: rotateY(80deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(4) {
+                transform: rotateY(120deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(5) {
+                transform: rotateY(160deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(6) {
+                transform: rotateY(200deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(7) {
+                transform: rotateY(240deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(8) {
+                transform: rotateY(280deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(9) {
+                transform: rotateY(320deg) translateZ(300px); 
+            } .content-carrousel figure:nth-child(10) {
+                transform: rotateY(360deg) translateZ(300px); 
+            } 
+
+            
+            .content-carrousel-edu {
+                width: 270px;
+                position: absolute;
+                float: right;
+                animation: rotar 25s infinite linear;
+                transform-style: preserve-3d;
+            }
+
+            .content-carrousel-edu:hover {
+                animation-play-state: paused;
+                cursor: pointer;
+            }
+
+            .content-carrousel-edu figure {
+                width: 100%;
+                height: 140px;
+                border: 1px solid #3b444b;
+                overflow: hidden;
+                position: absolute;
+            }
+
+            .content-carrousel-edu figure:nth-child(1) {
+                transform: rotateY(0deg) translateZ(300px); 
+            } .content-carrousel-edu figure:nth-child(2) {
+                transform: rotateY(90deg) translateZ(300px); 
+            } .content-carrousel-edu figure:nth-child(3) {
+                transform: rotateY(180deg) translateZ(300px); 
+            } .content-carrousel-edu figure:nth-child(4) {
+                transform: rotateY(270deg) translateZ(300px); 
+            } .content-carrousel-edu figure:nth-child(5) {
+                transform: rotateY(360deg) translateZ(300px); 
+            } 
+
+
+            .shadow {
+                position: absolute;
+                box-shadow: 0px 0px 20px 0px #000;
+                border-radius: 1px;
+            }
+
+            .content-carrousel img {
+                image-rendering: auto;
+                transition: all 300ms;
+                width: 100%;
+                height: 100%;
+            }
+
+            .content-carrousel img:hover {
+                transform: scale(1.2);
+                transition: all 300ms;
+            }
+
+            .content-carrousel-edu img {
+                image-rendering: auto;
+                transition: all 300ms;
+                width: 100%;
+                height: 100%;
+            }
+
+            .content-carrousel-edu img:hover {
+                transform: scale(1.2);
+                transition: all 300ms;
+            }
+
+            @keyframes rotar {
+                from {
+                    transform: rotateY(0deg);
+                } to {
+                    transform: rotateY(360deg);
+                }
+            }
+            
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 50px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+            }
+
+            .fa:hover {
+                opacity: 0.7;
+            }
+
+
+            .fa-twitter {
+                background: #55ACEE;
+                color: white;
+            }
+
+            .fa-google {
+                background: #dd4b39;
+                color: white;
+            }
+
+            .fa-linkedin {
+                background: #007bb5;
+                color: white;
+            }
+
+
+        </style>
+
+
+        <script>
+            
+            // hidden console 
+            function toggleTable( ) {
+                document.getElementById("myTable").classList.toggle("hidden");
+                return false
+            }
+            
+            function projectConsole( ) {
+                document.getElementById("proj").classList.toggle("hidden");
+                return false
+            }
+            function extraActivities( ) {
+                document.getElementById("extraAct").classList.toggle("hidden");
+                return false
+            }
+
+            function certified( ) {
+                document.getElementById("cert").classList.toggle("hidden");
+                return false
+            }
+
+            function skilled( ) {
+                document.getElementById("skill").classList.toggle("hidden");
+                return false
+            }
+            function award( ) {
+                document.getElementById("honours").classList.toggle("hidden");
+                return false
+            }
+            function profile( ) {
+                document.getElementById("prof").classList.toggle("hidden");
+                return false
+            }
+
+            function choice(temp) {
+                document.getElementById("choose").style.color = "silver";
+                document.getElementById("choose").classList.toggle("hidden");
+                document.getElementById("choose").innerHTML = " "+temp+" ";     
+            }
+            // scroll animations
+
+           
+            function colorSwitch(temp, num) {
+                choice(num);
+                window.value=temp;
+                const element = document.getElementById(temp);
+                element.style.backgroundColor = "silver";
+                window.element = element;
+
+                // to use it in return statement
+               
+                setTimeout(myFunction, 3000);
+            }
+            function nothing(){
+                 const element = document.getElementById("main");
+                element.scrollIntoView();
+                // to use it in return statement
+                window.element.style.backgroundColor = "black";
+
+                document.getElementById("choose").classList.toggle("hidden");
+                document.getElementById("choose").innerHTML = "";
+
+                window.select.style.color = "white";
+            }
+
+            function returnColor() {
+                setTimeout(nothing, 3000);
+            }
+
+
+            
+            function myFunction() {
+                if(window.value=="1"){
+                    const element = document.getElementById("Career");
+                    element.scrollIntoView();
+                }else if(window.value=="2"){
+                    const element = document.getElementById("education");
+                    element.scrollIntoView();
+                }else if(window.value=="3"){
+                    const element = document.getElementById("projects");
+                    element.scrollIntoView();
+                }else if(window.value=="4"){
+                    const element = document.getElementById("certifications");
+                    element.scrollIntoView();
+                }else if(window.value=="5"){
+                    const element = document.getElementById("skills");
+                    element.scrollIntoView();
+                }else if(window.value=="6"){
+                    const element = document.getElementById("awards");
+                    element.scrollIntoView();
+                }else if(window.value=="7"){
+                    const element = document.getElementById("extra");
+                    element.scrollIntoView();
+                }else if(window.value=="8"){
+                    const element = document.getElementById("personal");
+                    element.scrollIntoView();
+                }
+            }
+
+
+           // on focus
+            
+            function blue(x) {
+                x.style.color = "blue";
+                window.select = x;
+            }
+            function white(x) {
+                x.style.color = "white";
+            }
+            
+            // onload animations
+
+            function one(){
+                document.getElementById("first").style.backgroundColor = "silver";
+                setTimeout(two, 1000);
+            }
+            function two(){
+                document.getElementById("second").style.backgroundColor = "silver";
+                document.getElementById("first").style.backgroundColor = "black";   
+                setTimeout(three, 1000);
+            }
+
+            function three(){
+                document.getElementById("second").style.backgroundColor = "black";
+                document.getElementById("third").style.backgroundColor = "silver";
+                setTimeout(four, 1000);
+            }
+
+            function four(){
+                 document.getElementById("fourth").style.backgroundColor = "silver";
+                 document.getElementById("third").style.backgroundColor = "black";
+                setTimeout(five, 1000);
+            }
+
+            function five(){
+                 document.getElementById("fourth").style.backgroundColor = "black";
+                 document.getElementById("fifth").style.backgroundColor = "silver";
+                setTimeout(six, 1000);
+            }
+
+            function six(){
+                 document.getElementById("sixth").style.backgroundColor = "silver";
+                 document.getElementById("fifth").style.backgroundColor = "black";
+                setTimeout(seven, 1000);
+            }
+
+            function seven(){
+                 document.getElementById("sixth").style.backgroundColor = "black";
+                 document.getElementById("seventh").style.backgroundColor = "silver";
+                setTimeout(eigth, 2000);
+            }
+            function eigth(){
+                 document.getElementById("seventh").style.backgroundColor = "black";
+            }
+
+
+        </script>
+    </head>
+    <body onload="setTimeout(one, 2000);"> 
+
+        <h4 id="main" class="heading" style="margin-left: 50px;"><p id="first" style="display:inline; color:rgb(223, 43, 255)">import <p id="second" style="display:inline; color:#fffb00">nmamit</p>.<p id="third" style="display:inline; color:#fffb00">cse</p>.<p name="include" style="display:inline; color:#fffb00">*</p><p style="display:inline; color:white">;</p>
+        <div style="margin-left: 50px;">
+            <h4 ><div id="fourth" style="display:inline;"> <p style="display:inline; color:rgb(0, 8, 255)">public</p> <p style="display:inline; color:rgb(255, 154, 52)">void</p> Student {<br></p></div>
+                <!--Grid container-->
+                <div class="grid-container">
+                    <!--Grid left-->
+                    <div class="grid-child purple">
+                        <div  style="margin-left: 50px;"><div id="fifth" style="display:inline"><p style="display:inline; color:rgb(0, 8, 255)">public</p> static <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">main</p>(String args) {<br></div>
+                    
+                            <div style="margin-left: 50px;">
+                                <div id="sixth" style="display:inline;">while(<p style="display:inline; color:rgb(28, 41, 184)">True</p>) {</div>
+                                    <div style="margin-left: 50px;">
+                                        <div id="seventh" style="display:inline;">
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">My Details:</p>");<br>
+                
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('1', 1);">1) Career Objective:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('2', 2);">2) Educational Qualifications:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('3', 3);">3) Projects:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('4', 4);">4) Courses and Certification:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('5', 5);">5) Technical Skills/ Internships:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('6', 6);">6) Technology Stack:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('7', 7);">7) Extracurricular activities:</a>");<br>
+                                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<a href="javascript:void(0)" style="color:white;" onfocus="blue(this)" onclick="colorSwitch('8', 8);">8) Personal Profile:</a>");<br>
+                                        
+                                        </div>
+                                        <div id="pass">
+                                            switch(<h4 id="choose"  class="hidden" style="display:inline;color:#830ba8"> </h4>) {<br>
+                                                <div style="margin-left: 50px;">
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 1: <p id="1" style="display:inline; color:rgb(255, 52, 52)">careerObjective</p><p id='1_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 2: <p id="2" style="display:inline; color:rgb(255, 52, 52)">educationalQualifications</p><p id='2_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 3: <p id="3" style="display:inline; color:rgb(255, 52, 52)">projects</p><p id='3_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 4: <p id="4" style="display:inline; color:rgb(255, 52, 52)">courseAndCertifications</p><p id='4_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 5: <p id="5" style="display:inline; color:rgb(255, 52, 52)">skillsAndInternship</p><p id='5_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 6: <p id="6" style="display:inline; color:rgb(255, 52, 52)">technologyStack</p><p id='6_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 7: <p id="7" style="display:inline; color:rgb(255, 52, 52)">extraActivities</p><p id='7_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                    <p style="display:inline; color:rgb(61, 183, 228)">case</p> 8: <p id="8" style="display:inline; color:rgb(255, 52, 52)">personalProfile</p><p id='8_' style="display:inline; color:rgb(28, 41, 184)">( )</p>; break;<br>
+                                                </div>
+                                            }<br>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                            }<br>
+                        </div>
+                    </div class="grid-child green">
+                    <!--Grid Right-->
+                    <div>
+                        <div style="background-color: rgb(0, 0, 0);width: 650px; height:140px; padding: 10px;margin-top: 20px;margin-right:20px; " id="intro"  >
+                            <div style="background-color: rgb(0, 255, 238);color:black;" width="100%">
+                                <table width="100%" style="border: 15px solid rgb(0, 8, 255);" >
+                                    <tr>
+                                        <th><h2><b>My Name is Sujanth</b></h2></th>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><h2>Welcome to my Professional PortFolio!</h2></td>
+                                        
+                                    </tr>
+                                   
+                                </table>
+                                <!-- 3D Slideshow Section --> 
+                                <section id="slideshow" style="background-color: black;">
+                                    <div class="entire-content">
+                                        <div class="content-carrousel">
+                                            <figure class="shadow"><img src="img/name/h.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/name/t.JPG"/></figure>
+                                            <figure class="shadow"><img src="img/name/n.JPG"/></figure>
+                                            <figure class="shadow"><img src="img/name/a.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/name/j.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/name/u.JPG"/></figure>
+                                            <figure class="shadow"><img src="img/name/s.jpg"/></figure>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Career Objective-->
+                <div id="Career"></div>
+                <div style="margin-left: 50px;height:750px;margin-top:10px">
+                    <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">careerObjective</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>
+                    {<br>
+                        <div style="margin-left: 50px;">  
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Hi there 👋"</p>);<br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"I'm Sujanth."</p>);<br><br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Career Status:"</p>);<br><br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"- 🔭 I’m currently pursuing Computer Science and Engineering in NMAM Institute of Technology."</p>);<br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"- 🌱 I’m currently into Java."</p>);<br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"- 😄 Quick Learner and always ready to learn new Technologies."</p>);<br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"- 🌱 Creative Thinker and have my own Unique Style."</p>);<br>
+                            <!-- <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">""</p>);<br>
+                            <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">""</p>);<br> -->
+                            
+                            <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                        </div>
+                    }<br>
+                    <div class="grid-container">
+                        <div class="grid-child purple" >
+                            <img style="margin-left:350px; width:260px; height:300px; " src="img/photos/1.jpeg"/>
+                        </div> 
+                        <!-- <div class="grid-child purple" >
+                            <img style="margin-left:20px;width:290px; height:300px; "src="img/photos/akash.jpg"/>
+                        </div>  -->
+                    
+                    </div>
+                </div>
+                
+
+                <div id="education" ></div>
+                <div class="grid-container">
+                    <h5>
+                        <div style="margin-left: 50px;height:750px;" class="grid-child purple" > 
+                            <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">educationalQualifications</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br>
+                                <div style="margin-left: 50px;">
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"This section is all about"</p>);<br>
+                    
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"my educational qualifications."</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Completed my schooling in"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Bajagoli. And currently"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"pursuing my Graduation"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"in NMAM Institute of"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Technology, Karkala.\n"</p>);<br><br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"I am going to be"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"a Computer Science"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"graduate in 2023"</p>);<br><br>
+                                    <a href="#education" style="font-size: 30px;"  onClick="toggleTable( );"><u><h4>showMyAcademics<p style="display:inline; color:rgb(28, 41, 184)">( )</p>;</h4></u></a>
+                                                        
+                                    <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(27, 136, 238)">return</a> ;<br>
+                                </div>
+                            }<br>
+                        </div>
+                    </h5>
+
+                    <div  class="grid-child green">
+                        <div style="background-color: rgb(236, 233, 235);width: 800px; height:575px; padding: 10px;margin-top: 20px;margin-right: 40px;" id="myTable"  class="hidden">
+                            <div style="background-color: rgb(27, 136, 238);color:rgb(255, 255, 255)" width="100%">
+                                <h6>
+                                    <table width="100%" >
+                                        <tr>
+                                            <th>Certificate</th>
+                                            <th>Institute</th> 
+                                            <th>Board</th>
+                                            <th>Year of passing</th>
+                                            <th>Grade</th>
+                                        </tr>
+                                        <tr>
+                                            <td>B.E (CSE)</td>
+                                            <td>NMAMIT</td> 
+                                            <td>VTU, Belgavi</td>
+                                            <td>2019 - Present</td>
+                                            <td>7.37 CGPA</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DIPLOMA</td>
+                                            <td>NRAMP NITTE</td> 
+                                            <td>DTE</td>
+                                            <td>Jun 2017</td>
+                                            <td>68 %</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SSLC</td>
+                                            <td>GOVT High School</td> 
+                                            <td>KSEEB</td>
+                                            <td>April 2015</td>
+                                            <td>60 %</td>
+                                        </tr>
+                                    </table>
+                                </h6>
+                                <!-- 3D Slideshow Section --> 
+                                <section id="slideshow">
+                                    <div class="entire-content-edu">
+                                        <div class="content-carrousel-edu">
+                                            <figure class="shadow"><img src="img/edu/nmamit.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/edu/nmamit1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/edu/sch.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/edu/dip.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/edu/dip2.jpg"/></figure>
+                                        </div>
+                                    </div>
+                                </section> 
+
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+
+                <!-- Projects Section-->
+                <div id="projects" ></div>
+                <div class="grid-container">
+                    <h5>
+                        <div style="margin-left: 50px;height:750px;" class="grid-child purple">
+                            <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">projects</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br>
+                                <div style="margin-left: 50px;">
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Mini Projects Done:\n"</p>);<br><br>
+                    
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Home Automation(Internet) - IOT"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Door OS - Computer Graphics"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Task scheduling - Cloud Project"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Covid-19 Prediction - ML"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Home Automation(Bluetooth) -IOT"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Port Folio - Web Project"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"TravelX - Web Project"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"LMS - DBMS Project"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Chat App - Java Project"</p>);<br><br>
+
+                                    
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Currrently Working on Two Projects: \n"</p>);<br><br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"1) Land Rover(Planet Exploration Device)"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"2) Fall Detection - Machine Learning"</p>);<br><br>
+                                    
+                                    <br><a href="#projects" style="font-size: 30px;"  onClick="projectConsole( );"><u><h4>showProjectImages<p style="display:inline; color:rgb(28, 41, 184)">( )</p>;</h4></u></a>
+                                    <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                                </div>
+                            }<br>
+                        </div>
+                    </h5>
+                    <div  class="grid-child green">
+                        <div style="background-color: rgb(71, 239, 49);width: 700px; height:700px; padding: 10px;margin-top: 20px;margin-right: 20px;" id="proj"  class="hidden"> 
+                            <div style="background-color: rgb(255, 18, 255);color:black" width="100%">
+                                <section id="slideshow" style="background-color: rgb(255, 18, 255);">
+                                    <div class="entire-content">
+                                        <div class="content-carrousel">
+                                            <figure class="shadow"><img src="img/proj/door1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/door2.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/door3.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/door4.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/door5.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/workshop4.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/chat1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/workshop3.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/workshop.jpg"/></figure>
+                                        </div>
+                                    </div>
+                                </section>
+                                <!-- 3D Slideshow Section --> 
+                                <section id="slideshow" style="background-color: rgb(87, 45, 255);">
+                                    <div class="entire-content">
+                                        <div class="content-carrousel">
+                                            <figure class="shadow"><img src="img/proj/home.png"/></figure>
+                                            <figure class="shadow"><img src="img/proj/home2.png"/></figure>
+                                            <figure class="shadow"><img src="img/proj/home3.png"/></figure>
+                                            <figure class="shadow"><img src="img/proj/home4.png"/></figure>
+                                            <figure class="shadow"><img src="img/proj/workshop1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/travelx1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/home10.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/lms1.jpg"/></figure>
+                                            <figure class="shadow"><img src="img/proj/lms2.jpg"/></figure>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                </div>
+
+                <!-- Certifications-->
+                <div id="certifications" ></div>
+                <div class="grid-container">
+                    <h5>
+                        <div style="margin-left: 50px;height:750px;" class="grid-child purple">
+                            <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">courseAndCertifications</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br><br>
+                                <div style="margin-left: 50px;">
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Courses:"</p>);<br><br>
+                    
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"1) BOLT - Web Development"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"2) VERZEO - CYBER SECURITY"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"3) MATHWORKS - Deep Learning Onramp"</p>);<br><br>
+
+                                    
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Certifications"</p>);<br><br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"1) MATHWORKS - MATHLAB Onramp"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"2) DEVTOWN - Recipe API Backend Web Development "</p>);<br><br>
+                                   <!-- <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"1) Hacker Rank - Java Basics"</p>);<br>
+                                    <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"2) Hacker Rank - SQL Basics"</p>);<br><br><br>-->
+                                    
+                                    <br><a href="#certifications" style="font-size: 30px;"  onClick="certified( );"><u><h4>certifiedCourses<p style="display:inline; color:rgb(28, 41, 184)">( )</p>;</h4></u></a><br>
+                                    <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                                </div>
+                            }<br>
+                        </div>
+                    </h5>
+
+                    <div class="grid-child green">
+                        <div  class="grid-child green">
+                            <div style="background-color: rgb(236, 233, 235);width: 700px; height:700px; padding: 10px;margin-top: 20px;" id="cert"  class="hidden">
+                                <div style="background-color: rgb(239, 49, 201);color:black" width="100%">
+                                    <!-- 3D Slideshow Section --> 
+                                    <section id="slideshow" style="background-color: rgb(138, 10, 136);">
+                                        <div class="entire-content">
+                                            <div class="content-carrousel">
+                                                <figure class="shadow"><img src="img/certifications/m.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/v3.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/matlab.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/bolt.JPG"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/m1.JPG"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/d2.JPG"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/v2.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/m2.JPG"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/d3.JPG"/></figure>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- 3D Slideshow Section --> 
+                                    <section id="slideshow" style="background-color: rgb(132, 216, 53);">
+                                        <div class="entire-content">
+                                            <div class="content-carrousel">
+                                                <figure class="shadow"><img src="img/certifications/r.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/v.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/hackerrank.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/bolt.png"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/v1.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/d1.JPG"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/bolt2.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/v2.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/certifications/d.png"/></figure>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Skills-->
+                <div id="skills" ></div>
+                <div class="grid-container">
+                    <div style="margin-left: 50px;height:750px;" class="grid-child purple">
+                        <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">skillsAndInternship</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br>
+                            <div style="margin-left: 50px;">
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"----Worked with:-----"</p>);<br>
+                
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Raspbarry Pi"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Arduino"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Java Programming"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"C-programming"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"PHP"</p>);<br><br>
+                                
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"----Softwares:----"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Eclipse"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"VS Code"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Spyder"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Thonny Editor"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Code Blocks"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Android Studio"</p>);<br><br>
+
+                                
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"-----Worked with Systems:----"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Windows"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"UBUNTU"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Raspbian OS"</p>);<br>
+                                
+                                <br><a href="#skills" style="font-size: 30px;"  onClick="skilled( );"><u><h4>skilledAt<p style="display:inline; color:rgb(28, 41, 184)">( )</p>;</h4></u></a>
+
+                                <a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;
+                            </div>
+                        }<br>
+                    </div>
+                    <div class="grid-child green">
+                        <div  class="grid-child green">
+                            <div style="background-color: rgb(66, 222, 46);width: 700px; height:700px; padding: 10px;margin-top: 20px;" id="skill"  class="hidden">
+                                <div style="background-color: rgb(239, 49, 201);color:black" width="100%">
+                                    <!-- 3D Slideshow Section --> 
+                                    <section id="slideshow" style="background-color: rgb(199, 116, 245);color:black">
+                                        <div class="entire-content">
+                                            <div class="content-carrousel">
+                                                <figure class="shadow"><img src="img/skills/raspPi.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/arduino.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/office.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/java.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/c.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/a1.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/php.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/eclipse.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/vscode.png"/></figure>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- 3D Slideshow Section --> 
+                                    <section id="slideshow" style="background-color: rgb(199, 116, 245);color:black">
+                                        <div class="entire-content">
+                                            <div class="content-carrousel">
+                                                <figure class="shadow"><img src="img/skills/spyder.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/thonny.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/anaconda.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/codeblocks.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/a2.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/windows.png"/></figure>
+                                                <figure class="shadow"><img src="img/skills/ubuntu.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/hardware.jpg"/></figure>
+                                                <figure class="shadow"><img src="img/skills/RaspOS.jpg"/></figure>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Honours and Awards-->
+                <div id="awards" ></div>
+                <div>
+                    <div style="margin-left: 50px;height:750px;">
+                        <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">technologyStack</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br><br>
+                            <div style="margin-left: 50px;">
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Web Development"</p>);<br><br>
+
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Hyper Text Markup Languages="</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Cascading Style Sheet"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> PHP : Hypertext Preprocessor"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Java Script"</p>);<br><br>
+
+
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Programing Languages:"</p>);<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> C - Programing"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Java - Programing"</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Python - Programing"</p>);<br><br>
+                            
+                                
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Interests:"</p>);<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Android development."</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"---> Internet of Things."</p>);<br><br>
+
+                                
+                               
+
+                                <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                            </div>
+                        }<br>
+                    </div>
+                </div>
+
+                <!-- Extra Activities-->
+                <div id="extra"></div>
+                <div>
+                    <div style="margin-left: 50px;height:750px;">
+                        <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">extraActivities</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br>
+                            <div style="margin-left: 50px;">
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Other Interships: "</p>);<br><br>
+
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">" Working as an intern in joint collaboration with Intelligent "</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">" High Performance Computing Lab- Ritsumeikan University, "</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"  Japan and NMAMIT IHPC Research LAB, Department of CSE."</p>);<br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"  Project title: HAR-V (AIR)"</p>);<br><br>
+
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Volunteering:"</p>);<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"=> Volunteered Freshmen Orientation Programme - 2022, NMAMIT, Nitte"</p>);<br>
+
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"Organization:"</p>);<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>(<p style="display:inline; color:white">"=> SACA (Softskills And Communication Association) - 2022, NMAMIT, Nitte"</p>);<br>
+
+                                <br><a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                            </div>
+                        }<br>
+
+                        <div class="grid-container">
+                            <div >
+                                <img style="margin-left:200px; width:400px; height:300px; " src="img/logos/logo.jpg"/>
+                            </div> 
+                            <div  >
+                                <img style="width:400px; height:300px; " src="img/logos/l2.png"/>
+                            </div> 
+                        
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Profile-->
+                <div id="personal" ></div>
+                <div class="grid-container">
+                    <div style="margin-left: 50px;height:750px;" class="grid-child purple">
+                        <p style="display:inline; color:rgb(255, 154, 52)">void</p> <p style="display:inline; color:rgb(255, 52, 52)">personalProfile</p><p style="display:inline; color:rgb(28, 41, 184)">( )</p>{<br>
+                            <div style="margin-left: 50px;">
+                                
+                                <br><p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Personal Profile</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Name        : Sujanth </p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Gender      : Male</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Place   : Karkala</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Date of Birth   : Not To be Disclosed</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Contact number  :  Not To be Disclosed</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Marital status   : Single</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Hobbies     : Watching cricket</p>");<br><br>
+                                <p style="display:inline; color:rgb(96, 232, 236)">System</p>.<p style="display:inline; color:rgb(96, 232, 236)">out</p>.<p style="display:inline; color:rgb(229, 255, 0)">println</p>("<p style="display:inline; color:rgb(255, 255, 255)">Languages   : English, Kannada, Hindi, Tulu, Tamil</p>");<br><br>
+                            
+                                <a href="#personal" style="font-size: 30px;"  onClick="profile( );"><u><h4>moreAboutMe<p style="display:inline; color:rgb(28, 41, 184)">( )</p>;</h4></u></a><br>
+                                <a href="javascript:void(0)" onfocus="white(this)" onclick="returnColor();" style="display:inline; color:rgb(233, 37, 240)">return</a> ;<br>
+                            </div> 
+                        }<br>
+                    </div>
+                    <div class="grid-child green">
+                        <div  >
+                            <div style="background-color: rgb(236, 233, 235);width: 345px; height:400px; padding: 10px;margin-top: 20px;" id="prof"  class="hidden">
+                                <div style="background-color: rgb(239, 49, 201);color:black" > 
+                                    <a href="https://github.com/sujanth9741/sujanth9741"><img  style="margin-left: 10px; margin-top: 10px; margin-bottom: 10px;" width =300 height=150 src="img/contact/github.png"/></a>
+                                </div>
+                                <div style="background-color: rgb(222, 111, 31);color:black" > 
+                                    <a href="https://www.linkedin.com/in/sujanth-840619231/"><img style="margin-left: 10px ; margin-top: 10px;margin-bottom: 10px;" width =300 height=180 src="img/contact/linkedin.png"/></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }</h4>
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    </body>
+</html>
